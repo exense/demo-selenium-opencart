@@ -10,6 +10,8 @@ import step.functions.io.OutputBuilder;
 import step.grid.io.Attachment;
 import step.grid.io.AttachmentHelper;
 
+import java.io.Closeable;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
@@ -57,5 +59,22 @@ public class SeleniumHelper {
 			return false;
 		}
 		return true;
+	}
+
+	// Wrapping the WebDriver instance to put it to the Session
+	// as it is not implementing the Closeable interface
+	public static class DriverWrapper implements Closeable {
+
+		final WebDriver driver;
+
+		public DriverWrapper(WebDriver driver) {
+			super();
+			this.driver = driver;
+		}
+
+		@Override
+		public void close() throws IOException {
+			driver.quit();
+		}
 	}
 }

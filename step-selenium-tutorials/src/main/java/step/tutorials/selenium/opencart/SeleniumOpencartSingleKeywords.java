@@ -154,20 +154,5 @@ public class SeleniumOpencartSingleKeywords extends AbstractKeyword {
 
 
 
-	// Wrapping the WebDriver instance to put it to the Session
-	// as it is not implementing the Closeable interface
-	public class DriverWrapper implements Closeable {
 
-		final WebDriver driver;
-
-		public DriverWrapper(WebDriver driver) {
-			super();
-			this.driver = driver;
-		}
-
-		@Override
-		public void close() throws IOException {
-			driver.quit();
-		}
-	}
 }
