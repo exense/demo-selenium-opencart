@@ -89,6 +89,6 @@ public class SeleniumOpencartTestcaseAsKeyword extends AbstractKeyword {
 	 */
 	@Override
 	public boolean onError(Exception e) {
-		return onErrorHandler(e, Optional.of(driver), output);
+		return onErrorHandler(e, Optional.ofNullable(driver), output);
 	}
 }
