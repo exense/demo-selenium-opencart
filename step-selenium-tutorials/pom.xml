@@ -29,7 +29,7 @@
 
 	<properties>
 		<step-api.version>1.1.7</step-api.version>
-		<selenium.version>4.2.2</selenium.version>
+		<selenium.version>4.10.0</selenium.version>
 		<junit.version>5.8.2</junit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
